@@ -1,0 +1,93 @@
+/* ==========================================================================
+  VARIABLES
+========================================================================== */
+/* ==========================================================================
+    GENERAL STYLES
+========================================================================== */
+/* line 22, ../sass/screen.scss */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  background-color: #041527;
+}
+
+/* line 31, ../sass/screen.scss */
+ul,
+p {
+  margin: 0;
+}
+
+/* line 35, ../sass/screen.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 45, ../sass/screen.scss */
+input,
+button,
+textarea,
+input:active,
+textarea:active,
+button:active,
+:focus {
+  outline: none;
+}
+
+/* line 51, ../sass/screen.scss */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 55, ../sass/screen.scss */
+a:focus {
+  outline: none;
+}
+
+/* line 59, ../sass/screen.scss */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* line 65, ../sass/screen.scss */
+.clearfix:before,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  zoom: 1;
+  /* IE < 8 */
+}
+
+/* line 73, ../sass/screen.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 77, ../sass/screen.scss */
+.left {
+  float: left;
+}
+
+/* line 81, ../sass/screen.scss */
+.right {
+  float: right;
+}
+
+/* line 85, ../sass/screen.scss */
+.no-mg {
+  margin: 0 !important;
+}
+
+/* line 89, ../sass/screen.scss */
+.hidden {
+  display: none;
+}

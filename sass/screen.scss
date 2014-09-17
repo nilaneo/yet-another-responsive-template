@@ -1,0 +1,91 @@
+@import "compass/css3";
+
+/* ==========================================================================
+  VARIABLES
+========================================================================== */
+
+$white: #fff;
+$black: #000;
+$outerSpace: #373c3f;
+$java: #16b1c4;
+$blueCHill: #088ca5;
+$balticSea: #27212c;
+$mediumRedViolet: #bc3183;
+$blueGem: #5b0fa1;
+$gallery: #ebebeb;
+
+/* ==========================================================================
+    GENERAL STYLES
+========================================================================== */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    background-color: #041527;
+}
+
+ul,
+p {
+    margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button,
+textarea,
+input:active,
+textarea:active,
+button:active,
+:focus {
+    outline: none;
+}
+
+*,
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+a:focus {
+    outline: none;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    zoom: 1; /* IE < 8 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.no-mg {
+    margin: 0 !important;
+}
+
+.hidden {
+    display: none;
+}

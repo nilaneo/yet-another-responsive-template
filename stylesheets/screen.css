@@ -1,68 +1,349 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 17, ../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+/* ==========================================================================
+    GENERAL STYLES
+========================================================================== */
+/* line 20, ../sass/screen.scss */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+/* line 29, ../sass/screen.scss */
+ul,
+p {
   margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
 }
 
-/* line 22, ../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html {
-  line-height: 1;
+/* line 33, ../sass/screen.scss */
+a {
+  text-decoration: none;
 }
 
-/* line 24, ../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
+/* line 43, ../sass/screen.scss */
+input,
+button,
+textarea,
+input:active,
+textarea:active,
+button:active,
+:focus {
+  outline: none;
 }
 
-/* line 26, ../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+/* line 49, ../sass/screen.scss */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-/* line 28, ../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
+/* line 53, ../sass/screen.scss */
+a:focus {
+  outline: none;
+}
+
+/* line 57, ../sass/screen.scss */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* line 63, ../sass/screen.scss */
+.clearfix:before,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  zoom: 1;
+  /* IE < 8 */
+}
+
+/* line 71, ../sass/screen.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 75, ../sass/screen.scss */
+.left {
+  float: left;
+}
+
+/* line 79, ../sass/screen.scss */
+.right {
+  float: right;
+}
+
+/* line 83, ../sass/screen.scss */
+.no-mg {
+  margin: 0 !important;
+}
+
+/* line 87, ../sass/screen.scss */
+.hidden {
+  display: none;
+}
+
+/* line 91, ../sass/screen.scss */
+.container {
+  padding: 0 56px;
+}
+
+/* line 95, ../sass/screen.scss */
+.pad {
+  padding: 0 56px;
+}
+
+/* line 99, ../sass/screen.scss */
+.pad-top {
+  padding: 46px 56px;
+}
+
+/* line 103, ../sass/screen.scss */
+.lnk-block {
+  display: block;
+}
+
+/* line 116, ../sass/screen.scss */
+.bg-blue {
+  background: #16b1c4;
+  -webkit-transition: all .5s;
+          transition: all .5s;
+}
+/* line 111, ../sass/screen.scss */
+.bg-blue:hover {
+  background-color: #26d2e7;
+}
+
+/* line 120, ../sass/screen.scss */
+.bg-pink {
+  background: #bc3183;
+  -webkit-transition: all .5s;
+          transition: all .5s;
+}
+/* line 111, ../sass/screen.scss */
+.bg-pink:hover {
+  background-color: #d14f9c;
+}
+
+/* line 124, ../sass/screen.scss */
+.bg-violet {
+  background: #5b0fa1;
+  -webkit-transition: all .5s;
+          transition: all .5s;
+}
+/* line 111, ../sass/screen.scss */
+.bg-violet:hover {
+  background-color: #7513d0;
+}
+
+/* line 128, ../sass/screen.scss */
+.bg-dark-gray {
+  background-color: #27212c;
+}
+
+/* line 132, ../sass/screen.scss */
+.bg-light-gray {
+  background-color: #ebebeb;
+}
+
+/* ==========================================================================
+    HEADER
+========================================================================== */
+/* line 140, ../sass/screen.scss */
+.header {
+  height: 98px;
+  background-color: #373c3f;
+}
+
+/* line 146, ../sass/screen.scss */
+.nav a {
+  font-size: 15px;
+  line-height: 98px;
+  color: white;
+  text-transform: uppercase;
+  -webkit-transition: all .3s;
+          transition: all .3s;
+}
+/* line 153, ../sass/screen.scss */
+.nav a:hover {
+  color: #bc3183;
+}
+/* line 158, ../sass/screen.scss */
+.nav li {
+  display: inline-block;
+  margin-left: 25px;
+}
+/* line 163, ../sass/screen.scss */
+.nav li:first-child {
+  margin-left: 0;
+}
+
+/* ==========================================================================
+    MAIN
+========================================================================== */
+/* line 172, ../sass/screen.scss */
+.block-big {
+  height: 580px;
+  padding-top: 190px;
+}
+
+/* line 177, ../sass/screen.scss */
+.title-big {
+  width: 700px;
+  color: white;
+  font-size: 55px;
+  line-height: 70px;
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+/* line 186, ../sass/screen.scss */
+.lnk-address {
+  display: inline-block;
+  width: 620px;
+  color: white;
+  opacity: 0.5;
+  font-size: 30px;
+}
+
+/* line 194, ../sass/screen.scss */
+.block-middle {
+  height: 240px;
+  color: #9787a6;
+  font-size: 25px;
+  line-height: 240px;
+}
+
+/* line 201, ../sass/screen.scss */
+.floated {
+  float: right;
+  height: 240px;
+  width: 230px;
+  text-align: center;
+}
+/* line 206, ../sass/screen.scss */
+.floated .arrow {
+  line-height: 235px;
+}
+
+/* line 211, ../sass/screen.scss */
+.block-third {
+  width: 33.3%;
+  text-align: center;
+}
+
+/* line 216, ../sass/screen.scss */
+.lnk-block.bg-violet {
+  height: 300px;
+}
+
+/* line 220, ../sass/screen.scss */
+.img-responsive {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 226, ../sass/screen.scss */
+.row {
+  display: table;
+}
+/* line 229, ../sass/screen.scss */
+.row .block-third {
+  display: table-cell;
+  height: 100%;
   vertical-align: middle;
 }
 
-/* line 30, ../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
-}
-/* line 103, ../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
+/* line 236, ../sass/screen.scss */
+.title {
+  color: #088ca5;
+  font-size: 30px;
+  margin-bottom: 30px;
 }
 
-/* line 32, ../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
+/* line 242, ../sass/screen.scss */
+.text {
+  font-size: 14px;
+  line-height: 26px;
+  color: #515151;
+}
+/* line 246, ../sass/screen.scss */
+.text p {
+  margin-bottom: 40px;
 }
 
-/* line 116, ../../../.rvm/gems/ruby-1.9.3-p362/gems/compass-0.12.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block;
+/* line 251, ../sass/screen.scss */
+.text-two-cols {
+  -webkit-column-count: 2;
+     -moz-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 50px;
+     -moz-column-gap: 50px;
+          column-gap: 50px;
+}
+
+/* line 256, ../sass/screen.scss */
+.arrow {
+  margin: 0 auto;
+}
+
+/* line 261, ../sass/screen.scss */
+.arrow-small {
+  width: 20px;
+  height: 30px;
+}
+
+/* line 266, ../sass/screen.scss */
+.arrow-big {
+  width: 30px;
+  height: 40px;
+}
+
+/* line 271, ../sass/screen.scss */
+.arrow-inline {
+  display: inline-block;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width: 640px) and (max-width: 980px) {
+  /* line 281, ../sass/screen.scss */
+  .row {
+    display: block;
+  }
+
+  /* line 285, ../sass/screen.scss */
+  .block-third {
+    display: block;
+    width: 100vw;
+    height: 100vw;
+  }
+}
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  /* Styles */
+}
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  /* Styles */
+}
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Styles */
+}
+/* iPads (landscape) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Styles */
+}
+/* iPads (portrait) ----------- */
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* Styles */
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  /* Styles */
 }

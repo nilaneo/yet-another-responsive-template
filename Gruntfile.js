@@ -6,7 +6,7 @@ module.exports = function(grunt) {
       dist: {
         options: {
           sassDir: 'sass',
-          cssDir: 'css'
+          cssDir: 'stylesheets'
         }
       }
     },
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
         browsers: ['last 2 versions', 'ie 8', 'ie 9']
       },
       no_dest: {
-        src: 'css/main.css'
+        src: 'stylesheets/screen.css'
       }
     }
 

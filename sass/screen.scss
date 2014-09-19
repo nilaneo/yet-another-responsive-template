@@ -1,18 +1,16 @@
+@import "compass";
 @import "compass/css3";
-
-/* ==========================================================================
-  VARIABLES
-========================================================================== */
 
 $white: #fff;
 $black: #000;
 $outerSpace: #373c3f;
 $java: #16b1c4;
-$blueCHill: #088ca5;
+$blueChill: #088ca5;
 $balticSea: #27212c;
 $mediumRedViolet: #bc3183;
 $blueGem: #5b0fa1;
 $gallery: #ebebeb;
+$amethystSmoke: #9787a6;
 
 /* ==========================================================================
     GENERAL STYLES
@@ -24,7 +22,7 @@ body {
     height: 100%;
     font-size: 14px;
     font-family: Arial, sans-serif;
-    background-color: #041527;
+    font-family: 'Montserrat', Arial, sans-serif;
 }
 
 ul,
@@ -49,7 +47,7 @@ button:active,
 *,
 *:before,
 *:after {
-  @include box-sizing(border-box);
+    @include box-sizing(border-box);
 }
 
 a:focus {
@@ -88,4 +86,247 @@ ul {
 
 .hidden {
     display: none;
+}
+
+.container {
+    padding: 0 56px;
+}
+
+.pad {
+    padding: 0 56px;
+}
+
+.pad-top {
+    padding: 46px 56px;
+}
+
+.lnk-block {
+    display: block;
+}
+
+@mixin block-colored($color) {
+    background: $color;
+    transition: all .5s;
+
+    &:hover {
+        background-color: lighten($color, 10%)
+    }
+}
+
+.bg-blue {
+    @include block-colored($java);
+}
+
+.bg-pink {
+    @include block-colored($mediumRedViolet);
+}
+
+.bg-violet {
+    @include block-colored($blueGem);
+}
+
+.bg-dark-gray {
+    background-color: $balticSea;
+}
+
+.bg-light-gray {
+    background-color: $gallery;
+}
+
+/* ==========================================================================
+    HEADER
+========================================================================== */
+
+.header {
+    height: 98px;
+    background-color: $outerSpace;
+}
+
+.nav {
+    a {
+        font-size: 15px;
+        line-height: 98px;
+        color: $white;
+        text-transform: uppercase;
+        transition: all .3s;
+
+        &:hover {
+            color: $mediumRedViolet;
+        }
+    }
+
+    li {
+        display: inline-block;
+        margin-left: 25px;
+    }
+
+    li:first-child {
+        margin-left: 0;
+    }
+}
+
+/* ==========================================================================
+    MAIN
+========================================================================== */
+
+.block-big {
+    height: 580px;
+    padding-top: 190px;
+}
+
+.title-big {
+    width: 700px;
+    color: $white;
+    font-size: 55px;
+    line-height: 70px;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.lnk-address {
+    display: inline-block;
+    width: 620px;
+    color: $white;
+    opacity: 0.5;
+    font-size: 30px;
+}
+
+.block-middle {
+    height: 240px;
+    color: $amethystSmoke;
+    font-size: 25px;
+    line-height: 240px;
+}
+
+.floated {
+    float: right;
+    height: 240px;
+    width: 230px;
+    text-align: center;
+    .arrow {
+        line-height: 235px;
+    }
+}
+
+.block-third {
+    width: 33.3%;
+    text-align: center;
+}
+
+.lnk-block.bg-violet {
+    height: 300px;
+}
+
+.img-responsive {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.row {
+    display: table;
+
+    .block-third {
+        display: table-cell;
+        height: 100%;
+        vertical-align: middle;
+    }
+}
+
+.title {
+    color: $blueChill;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.text {
+    font-size: 14px;
+    line-height: 26px;
+    color: #515151;
+    p {
+        margin-bottom: 40px;
+    }
+}
+
+.text-two-cols {
+   column-count: 2;
+   column-gap: 50px;
+}
+
+.arrow {
+    margin: 0 auto;
+
+}
+
+.arrow-small {
+    width: 20px;
+    height: 30px;
+}
+
+.arrow-big {
+    width: 30px;
+    height: 40px;
+}
+
+.arrow-inline {
+    display: inline-block;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 640px)
+and (max-width : 980px) {
+
+    .row {
+        display: block;
+    }
+
+    .block-third {
+        display: block;
+        width: 100vw;
+        height: 100vw;
+    }
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* Styles */
 }

@@ -4,7 +4,7 @@
 /* ==========================================================================
     GENERAL STYLES
 ========================================================================== */
-/* line 22, ../sass/screen.scss */
+/* line 23, ../sass/screen.scss */
 html,
 body {
   width: 100%;
@@ -14,18 +14,18 @@ body {
   background-color: #041527;
 }
 
-/* line 31, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 ul,
 p {
   margin: 0;
 }
 
-/* line 35, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 a {
   text-decoration: none;
 }
 
-/* line 45, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 input,
 button,
 textarea,
@@ -36,27 +36,25 @@ button:active,
   outline: none;
 }
 
-/* line 51, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 55, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 a:focus {
   outline: none;
 }
 
-/* line 59, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 ul {
   list-style-type: none;
   padding-left: 0;
 }
 
-/* line 65, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 .clearfix:before,
 .clearfix:after {
   content: ".";
@@ -67,27 +65,59 @@ ul {
   /* IE < 8 */
 }
 
-/* line 73, ../sass/screen.scss */
+/* line 74, ../sass/screen.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 77, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 .left {
   float: left;
 }
 
-/* line 81, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 .right {
   float: right;
 }
 
-/* line 85, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 .no-mg {
   margin: 0 !important;
 }
 
-/* line 89, ../sass/screen.scss */
+/* line 90, ../sass/screen.scss */
 .hidden {
   display: none;
+}
+
+/* line 94, ../sass/screen.scss */
+.container {
+  padding: 0 56px;
+}
+
+/* ==========================================================================
+    HEADER
+========================================================================== */
+/* line 102, ../sass/screen.scss */
+.header {
+  height: 98px;
+  background-color: #373c3f;
+}
+
+/* line 108, ../sass/screen.scss */
+.nav a {
+  font-size: 15px;
+  line-height: 98px;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* line 117, ../sass/screen.scss */
+.nav-inline li {
+  display: inline-block;
+  margin-left: 25px;
+}
+/* line 122, ../sass/screen.scss */
+.nav-inline li:first-child {
+  margin-left: 0;
 }

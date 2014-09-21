@@ -19,9 +19,11 @@
         <div class="page-wrapper">
             <header class="header">
                 <div class="pad">
-                    <div class="clearfix hidden">
+                    <div class="clearfix nav-mobile">
                         <h2 class="left">Navigation</h2>
-                        <a href="#0" class="right" class="btn-nav"></a>
+                        <a href="#0" class="right btn-nav j-btn-nav">
+                            &#9776;
+                        </a>
                     </div>
                     <nav class="nav">
                         <ul>
@@ -52,40 +54,18 @@
                         </svg>
                     </a>
                 </div>
-                <div class="row">
-                    <a href="#0" class="block-third lnk-block bg-violet">
-                        <span class="content">
-                            <div>
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 80" xml:space="preserve" class="arrow arrow-small">
-                                        <polyline fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" points="10,10 40,40 10,70"/>
-                                    </svg>
-                                </span>
-                            </div>
-                        </span>
+                <div class="clearfix">
+                    <a href="#0" class="block-with-ratio lnk-block bg-violet">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 80" xml:space="preserve" class="arrow arrow-small absolute-center">
+                            <polyline fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" points="10,10 40,40 10,70"/>
+                        </svg>
                     </a>
-                    <div class="block-third">
-                        <span class="content">
-                            <div>
-                                <span>
-                                    <img src="img/bridge.jpg" alt="" class="img-responsive">
-                                </span>
-                            </div>
-                        </span>
-                    </div>
-                    <div class="block-third">
-                        <span class="content">
-                            <div>
-                                <span>
-                                    <img src="img/girl.jpg" alt="" class="img-responsive">
-                                </span>
-                            </div>
-                        </span>
-                    </div>
+                    <img src="img/bridge.jpg" alt=""  class="block-with-ratio">
+                    <img src="img/girl.jpg" alt=""  class="block-with-ratio">
                 </div>
-                <article class="pad pad-top">
+                <article class="pad-top">
                     <h3 class="title">BlazRobar.com</h3>
-                    <div class="text text-two-cols">
+                    <div class="text text-cols">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula ipsum non leo tristique eget facilisis lacus commodo. Curabitur vitae justo lorem, non ornare nibh. Pellentesque pretium, tellus ac ultrices faucibus, nibh mauris dapibus lorem, vitae viverra nisl elit sit amet libero. Nam eu blandit risus.
                         </p>
@@ -102,5 +82,8 @@
                 </article>
             </main>
         </div><!-- end of page-wrapper -->
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script src="js/main.js"></script>
     </body>
 </html>

@@ -25,6 +25,11 @@ body {
     font-family: 'Montserrat', Arial, sans-serif;
 }
 
+.page-wrapper {
+    min-width: 320px;
+    overflow: auto;
+}
+
 ul,
 p {
     margin: 0;
@@ -80,26 +85,6 @@ ul {
     float: right;
 }
 
-.no-mg {
-    margin: 0 !important;
-}
-
-.hidden {
-    display: none;
-}
-
-.container {
-    padding: 0 56px;
-}
-
-.pad {
-    padding: 0 56px;
-}
-
-.pad-top {
-    padding: 46px 56px;
-}
-
 .lnk-block {
     display: block;
 }
@@ -133,8 +118,7 @@ ul {
     background-color: $gallery;
 }
 
-/* ==========================================================================
-    HEADER
+/*  HEADER
 ========================================================================== */
 
 .header {
@@ -144,8 +128,6 @@ ul {
 
 .nav {
     a {
-        font-size: 15px;
-        line-height: 98px;
         color: $white;
         text-transform: uppercase;
         transition: all .3s;
@@ -154,118 +136,41 @@ ul {
             color: $mediumRedViolet;
         }
     }
-
-    li {
-        display: inline-block;
-        margin-left: 25px;
-    }
-
-    li:first-child {
-        margin-left: 0;
-    }
 }
 
-/* ==========================================================================
-    MAIN
+/* MAIN
 ========================================================================== */
 
-.block-big {
-    height: 580px;
-    padding-top: 190px;
-}
-
 .title-big {
-    width: 700px;
     color: $white;
-    font-size: 55px;
-    line-height: 70px;
     margin: 0;
-    margin-bottom: 40px;
 }
 
 .lnk-address {
     display: inline-block;
-    width: 620px;
     color: $white;
     opacity: 0.5;
-    font-size: 30px;
 }
 
 .block-middle {
-    height: 240px;
     color: $amethystSmoke;
-    font-size: 25px;
-    line-height: 240px;
 }
 
 .floated {
     float: right;
-    height: 240px;
-    width: 230px;
     text-align: center;
-    .arrow {
-        line-height: 235px;
-    }
-}
-
-.block-third {
-    width: 33.3%;
-    text-align: center;
-}
-
-.lnk-block.bg-violet {
-    height: 300px;
-}
-
-.img-responsive {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.row {
-    display: table;
-
-    .block-third {
-        display: table-cell;
-        height: 100%;
-        vertical-align: middle;
-    }
 }
 
 .title {
     color: $blueChill;
-    font-size: 30px;
-    margin-bottom: 30px;
 }
 
 .text {
-    font-size: 14px;
-    line-height: 26px;
     color: #515151;
-    p {
-        margin-bottom: 40px;
-    }
-}
-
-.text-two-cols {
-   column-count: 2;
-   column-gap: 50px;
 }
 
 .arrow {
     margin: 0 auto;
-
-}
-
-.arrow-small {
-    width: 20px;
-    height: 30px;
-}
-
-.arrow-big {
-    width: 30px;
-    height: 40px;
 }
 
 .arrow-inline {
@@ -273,60 +178,363 @@ ul {
 }
 
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen
-and (min-width : 640px)
-and (max-width : 980px) {
+$block-ratio: 550/640;
 
-    .row {
+.block-with-ratio {
+    display: block;
+    position: relative;
+    float: left;
+    width: (100%) / 3;
+
+    img {
         display: block;
     }
 
-    .block-third {
-        display: block;
-        width: 100vw;
-        height: 100vw;
+    @media (max-width: 640px) {
+        width: 100%;
+        float: none;
     }
 
+    &:before {
+        content: "";
+        display: block;
+        padding-top: (100%) * $block-ratio;
+    }
 }
 
-/* Smartphones (landscape) ----------- */
-@media only screen
-and (min-width : 321px) {
-/* Styles */
+.arrow-small.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -15px 0 -10px 0;
 }
 
-/* Smartphones (portrait) ----------- */
-@media only screen
-and (max-width : 320px) {
-/* Styles */
+.btn-nav {
+    font-size: 40px;
+    text-decoration: none;
+    transition: all .4s;
+
+    &:hover {
+        color: $mediumRedViolet !important;
+    }
 }
 
-/* iPads (portrait and landscape) ----------- */
+/* ==========================================================================
+    MEDIA QUERIES
+========================================================================== */
+
 @media only screen
-and (min-width : 768px)
-and (max-width : 1024px) {
-/* Styles */
+and (max-width : 820px) {
+
+    .header {
+        position: relative;
+
+        h2,
+        .btn-nav {
+            color: $white;
+        }
+    }
+
+    .nav {
+        background-color: $outerSpace;
+        position: absolute;
+        right: -100%;
+        transition: right ease-out .5s;
+
+        li {
+            display: block;
+            margin: 0;
+        }
+
+        a {
+            display: block;
+            padding: 0 20px;
+        }
+
+        &.is-opened {
+            display: block;
+            right: 0;
+        }
+    }
 }
 
-/* iPads (landscape) ----------- */
 @media only screen
-and (min-width : 768px)
-and (max-width : 1024px)
-and (orientation : landscape) {
-/* Styles */
+and (max-width : 500px) {
+    .pad {
+        padding: 0 18px;
+    }
+
+    .pad-top {
+        padding: 15px 18px;
+    }
+
+    .header {
+        height: 36px;
+
+        h2,
+        .btn-nav {
+            line-height: 36px;
+        }
+
+        h2 {
+            font-size: 14px;
+        }
+
+        .btn-nav {
+            font-size: 20px;
+        }
+    }
+
+    .nav {
+        top: 36px;
+
+        a {
+            height: 36px;
+            line-height: 36px;
+            font-size: 12px;
+        }
+    }
+
+    .arrow-small {
+        width: 10px;
+        height: 14px;
+    }
+
+    .arrow-big {
+        width: 12px;
+        height: 18px;
+    }
+
+    .block-big {
+        height: 195px;
+        padding-top: 55px;
+    }
+
+    .title-big {
+        width: 234px;
+        font-size: 20px;
+        line-height: 33px;
+        margin-bottom: 14px;
+    }
+
+    .lnk-address {
+        width: 216px;
+        font-size: 12px;
+    }
+
+    .block-middle {
+        height: 76px;
+        line-height: 76px;
+        font-size: 11px;
+    }
+
+    .floated {
+        width: 76px;
+        height: 76px;
+        line-height: 87px;
+    }
+
+    .arrow-small.absolute-center {
+      margin: -6px 0 -11px 0;
+    }
+
+    .title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .text-cols {
+       column-count: 1;
+       column-gap: 50px;
+    }
+
+    .text {
+        font-size: 12px;
+        line-height: 20px;
+        p {
+            margin-bottom: 20px;
+        }
+    }
 }
 
-/* iPads (portrait) ----------- */
 @media only screen
-and (min-width : 768px)
-and (max-width : 1024px)
-and (orientation : portrait) {
-/* Styles */
+and (min-width : 501px)
+and (max-width : 820px) {
+
+    .pad {
+        padding: 0 35px;
+    }
+
+    .pad-top {
+        padding: 25px 35px;
+    }
+
+    .header {
+        height: 74px;
+
+        h2,
+        .btn-nav {
+            line-height: 74px;
+        }
+    }
+
+    .nav {
+        top: 74px;
+
+        a {
+            height: 40px;
+            line-height: 40px;
+            font-size: 15px;
+        }
+    }
+
+    .block-big {
+        height: 360px;
+        padding-top: 118px;
+    }
+
+    .title-big {
+        width: 435px;
+        font-size: 34px;
+        line-height: 43px;
+        margin-bottom: 24px;
+    }
+
+    .lnk-address {
+        width: 370px;
+    }
+
+    .block-middle {
+        height: 150px;
+        line-height: 150px;
+        font-size: 15px;
+    }
+
+    .floated {
+        width: 150px;
+        height: 150px;
+        line-height: 180px;
+    }
+
+    .arrow-small {
+        width: 17px;
+        height: 25px;
+    }
+
+    .arrow-big {
+        width: 25px;
+        height: 35px;
+    }
+
+    .arrow-small.absolute-center {
+      margin: -9px 0 -12px 0;
+    }
+
+    .text-cols {
+       column-count: 1;
+       column-gap: 50px;
+    }
+
+  .text {
+        p {
+            margin-bottom: 15px;
+        }
+    }
 }
 
-/* Desktops and laptops ----------- */
 @media only screen
-and (min-width : 1224px) {
-/* Styles */
+and (min-width : 821px) {
+
+    .pad {
+        padding: 0 56px;
+    }
+
+    .pad-top {
+        padding: 46px 56px;
+    }
+
+    .header {
+        position: static;
+        height: 98px;
+    }
+
+    .nav-mobile {
+        display: none;
+    }
+
+    .nav {
+        display: block;
+        a {
+            font-size: 15px;
+            line-height: 98px;
+        }
+
+        li {
+            display: inline-block;
+            margin-left: 25px;
+        }
+
+        li:first-child {
+            margin-left: 0;
+        }
+    }
+
+    .block-big {
+        height: 580px;
+        padding-top: 190px;
+    }
+
+    .title-big {
+        width: 700px;
+        font-size: 55px;
+        line-height: 70px;
+        margin-bottom: 40px;
+    }
+
+    .lnk-address {
+        width: 620px;
+        font-size: 30px;
+    }
+
+    .block-middle {
+        height: 240px;
+        font-size: 25px;
+        line-height: 240px;
+    }
+
+    .floated {
+        height: 240px;
+        width: 230px;
+        .arrow {
+            line-height: 235px;
+        }
+    }
+
+    .title {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    .text {
+        font-size: 14px;
+        line-height: 26px;
+        p {
+            margin-bottom: 40px;
+        }
+    }
+
+    .text-cols {
+       column-count: 2;
+       column-gap: 50px;
+    }
+
+    .arrow-small {
+        width: 20px;
+        height: 30px;
+    }
+
+    .arrow-big {
+        width: 30px;
+        height: 40px;
+    }
 }
